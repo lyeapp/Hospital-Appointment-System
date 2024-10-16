@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="h-100 gradient-form" style="background-color: #f5f5f5; min-height: 100vh;"> <!-- Ensuring section takes up full viewport height -->
+  <div class="container py-5 h-100" style="padding-bottom: 0;"> <!-- Removed padding from the bottom -->
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row no-gutters"> <!-- Bootstrap 4 uses no-gutters for no spacing -->
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+                <div class="text-center">
+                  <h4 class="mt-1 mb-5 pb-1">Log In</h4>
+                </div>
+
+                <form method="post">
+                  {% csrf_token %}
+                  <p>Please login to your account</p>
+
+                  <div class="form-group mb-4">
+                    <input type="text" id="form2Example11" name="username" class="form-control" placeholder="Username" required />
+                    <label class="form-label" for="form2Example11">Username</label>
+                  </div>
+
+                  <div class="form-group mb-4">
+                    <input type="password" id="form2Example22" name="password" class="form-control" required />
+                    <label class="form-label" for="form2Example22">Password</label>
+                  </div>
+
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button class="btn btn-light btn-block mb-3" type="submit" style="background-color: #a0c4ff; border-color: #a0c4ff;">Log in</button> <!-- Light blue button -->
+                    <a class="text-muted" href="#!">Forgot password?</a>
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-center pb-4">
+                    <p class="mb-0 mr-2">Don't have an account?</p>
+                    <button type="button" class="btn btn-success" onclick="location.href='{% url 'signup' %}'">Create new</button> <!-- Green button -->
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- This section has a custom gradient with a lighter blue shade and dark blue text -->
+            <div class="col-lg-6 d-flex align-items-center" style="background: linear-gradient(45deg, #9ad6fb, #b3e5fc);">
+              <div class="px-3 py-4 p-md-5 mx-md-4" style="color: #003366;"> <!-- Dark blue text (#003366) -->
+                <h4 class="mb-4" style="font-size: 1.6rem;">Amritha Hospital</h4> <!-- Larger font size for heading only -->
+                <p class="small mb-0">Welcome to Amrita Hospital, a place where healing goes beyond just curing the body. Our doors open with a vision of Sri Mata Amritanandamayi Devi (Amma), where healthcare is accessible to all, regardless of their background or financial means. Established in 1998 in the serene state of Kerala, we have been serving as a haven of hope and compassion for those seeking medical care. Our state-of-the-art facilities and advanced medical treatments provide the best possible care for our patients.</p> <!-- Original paragraph font size -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Edit Booking
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Edit Your Booking</h1>
+<hr>
+<div class="container w-50 text-left p-3 my-5" style="background-color: #cce5ff; border-radius: 10px;"> <!-- Lighter shade and rounded borders -->
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }} <!-- Applying crispy forms styling to the form -->
+        <br>
+        <div class="text-center"> <!-- Centering the button -->
+            <button class="btn btn-primary mb-4" style="width: 150px;" type="submit">Save changes</button> <!-- Same button style as in the other form -->
+        </div>
+    </form>
+</div>
+{% endblock %}

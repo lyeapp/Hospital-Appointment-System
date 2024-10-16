@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}  <!-- Load static files -->
+
+{% block title %}
+Contact
+{% endblock %}
+
+{% block content %}
+<div style="display: flex; justify-content: center; align-items: center; min-height: 100vh; flex-direction: column; margin-top: -60px;"> <!-- Adjusted margin-top for the outer container -->
+
+    <!-- Banner image with text overlay -->
+    <div style="position: relative; width: 100%;">
+        <img src="{% static 'images/car1.jpg' %}" alt="Contact Banner" style="width: 100vw; height: 400px; object-fit: cover; margin-left: calc(-50vw + 50%); border-radius: 10px;"> <!-- Full width image with height -->
+
+        <!-- Overlay text on the banner image -->
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: darkblue;">
+            <h1 style="font-size: 3em;">Contact Us</h1> <!-- Increased font size for the heading -->
+            <p style="font-size: 1.5em; font-style: italic; font-family: 'Georgia', serif;">Whether you are here, everywhere.</p> <!-- Italic and stylish font -->
+        </div>
+    </div>
+
+    <!-- Contact box -->
+    <div style="background-color: #87CEEB; color: white; border-radius: 10px; padding: 40px; width: 90%; max-width: 700px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); margin-top: 20px;"> <!-- Lighter blue box with white text -->
+        <h2 style="text-align: center; margin-bottom: 20px;">Contact:</h2> <!-- New heading on top of the box -->
+        <h2>Emergency</h2>
+        <p style="text-align: center;">📞 0129-2851234, 0129-3521234</p>
+
+        <h2>International Patients</h2>
+        <p style="text-align: center;">📞 +91 85955 23202<br>
+        ✉️ <a href="mailto:ips.ops@fbd.amrita.edu" style="color: white;">ips.ops@fbd.amrita.edu</a></p>
+
+        <h2>Appointment</h2>
+        <p style="text-align: center;">📞 0129-2851234, 0129-3521234<br>
+        ✉️ <a href="mailto:fbd@amritahospitals.org" style="color: white;">fbd@amritahospitals.org</a></p>
+
+        <h2>Pharmacy Support</h2>
+        <p style="text-align: center;">📞 +91 8595903816, +91 8595903817<br>
+        ✉️ <a href="mailto:pharmacy@amritapharmacy.com" style="color: white;">pharmacy@amritapharmacy.com</a></p>
+    </div>
+</div>
+{% endblock %}
+

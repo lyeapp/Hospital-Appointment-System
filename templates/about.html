@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+About
+{% endblock %}
+
+{% block content %}
+<!-- Outer container with more padding for left, right, and top spacing -->
+<div style="padding: 60px 200px 0 200px;"> <!-- Tripled top padding to 60px -->
+    <div style="display: flex; align-items: flex-start; justify-content: flex-start;">
+        <!-- Left side: Hospital Image -->
+        <div style="flex-grow: 0; margin-right: 0;">
+            <img src="{% static 'images/amrita.webp' %}" alt="Hospital Image" style="width: 500px; height: 500px; margin-top: 50px; margin-bottom: 20px;"> <!-- Increased margin-top to 50px -->
+        </div>
+        
+        <!-- Right side: Heading and Text -->
+        <div style="margin-left: 40px;"> <!-- Increased margin-left to add more space -->
+            <h1>About</h1>
+            <p style="text-align: justify; font-size: 18px;"> <!-- Added font-size for bigger text -->
+                Amrita Hospital is the ultimate healthcare destination for international patients seeking the best medical care in Faridabad, India. Our team of globally renowned doctors specializes in cardiology, neurology, oncology, and other specialties, providing personalized attention and achieving exceptional success rates. 
+                We prioritize state-of-the-art facilities, warm, compassionate care, and advanced medical solutions to exceed your expectations.
+                At Amrita Hospital, we are passionately committed to making a significant impact on the lives of our patients by providing the latest medical innovations and a healing touch. 
+                Yes, you can trust us to take care of your health needs and experience the sophistication of Amrita Hospital. 
+                Let us be your partner in your journey to recovery, and we will ensure a comfortable and seamless experience for you.
+            </p>
+
+            <!-- New Section for Services in a Table -->
+            <h2>Our Services</h2>
+            <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                <tbody>
+                    <tr>
+                        <td style="padding: 8px;">24/7 assistance to cater to all your needs.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px;">A choice of cuisine catering to your dietary preferences.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px;">A fluent English-speaking staff for easy communication.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px;">Access to a state-of-the-art medical facility equipped with the latest technology.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px;">Availability of world-renowned doctors and specialists in various fields.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px;">Communication with local embassies, consulates, and missions to ensure your comfort and safety.</td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td style="padding: 8px;">Personalized medical consultation and hospital admission management.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px;">Personalized nursing care and attention for a comfortable and speedy recovery.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

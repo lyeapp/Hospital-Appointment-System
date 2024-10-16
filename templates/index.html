@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+{% load static %}
+
+<!-- Adjust the margin-top of the carousel to make it touch the navbar -->
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="margin-top: -60px;"> <!-- Adjust this margin based on your navbar height -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+            <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
+                <h1 style="color: grey; font-weight: bold; text-align: center; font-size: 4rem;">Don't let your health <br> take a back seat</h1>
+                <a href="{% url 'login' %}" class="btn btn-info mt-3">Book an Appointment</a>
+            </div>
+            <img src="{% static '/images/car1.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
+                <h1 style="color: dark; font-weight: bold; text-align: center; font-size: 4rem;">Gentle hands <br> that care for your loved ones</h1>
+            </div>
+            <img src="{% static '/images/car2.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 50%; transform: translateY(-50%);">
+                <h1 style="color: white; font-weight: bold; text-align: center; font-size: 4rem;">Pioneers in <br> Robotic surgery</h1>
+                <a href="{% url 'contact' %}" class="btn btn-info mt-3">Contact Us</a>
+            </div>
+            <img src="{% static '/images/car3.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Two-column layout below the carousel -->
+<div class="container mt-5">
+    <div class="row">
+        <!-- Left column: 1st part -->
+        <div class="col-md-6">
+            <h2>Why Amrita Hospital?</h2>
+            <p class="fs-2">Eminence in Healthcare: Where Excellence and Care Converge for Optimal Health Outcomes.</p>
+        </div>
+
+        <!-- Right column: 2nd part -->
+        <div class="col-md-6">
+            <p>Amrita Hospital shines as a beacon of superior healthcare, widely recognized across South Asia. Our unwavering commitment to delivering exceptional care has magnetized a group of eminent, highly skilled medical professionals. With a relentless pursuit of excellence as our guiding principle, we uphold the most stringent standards of medical treatments, always aiming to secure the best possible health outcomes for our patients.</p>
+            
+            <!-- Cards for each feature with equal height -->
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100 d-flex flex-column" style="background-color: #e0f7fa; border: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"> <!-- Added box-shadow and removed border -->
+                        <div class="card-body text-center" style="color: darkblue;"> <!-- Added blue text style -->
+                            <h5 class="card-title"><strong>2600+</strong></h5>
+                            <p class="card-text">Bed Capacity</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100 d-flex flex-column" style="background-color: #e0f7fa; border: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"> <!-- Added box-shadow and removed border -->
+                        <div class="card-body text-center" style="color: darkblue;"> <!-- Added blue text style -->
+                            <h5 class="card-title"><strong>534</strong></h5>
+                            <p class="card-text">Smart ICUs and Critical Care Beds</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100 d-flex flex-column" style="background-color: #e0f7fa; border: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"> <!-- Added box-shadow and removed border -->
+                        <div class="card-body text-center" style="color: darkblue;"> <!-- Added blue text style -->
+                            <h5 class="card-title"><strong>64</strong></h5>
+                            <p class="card-text">Fully Networked Modular Operation Theatres</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

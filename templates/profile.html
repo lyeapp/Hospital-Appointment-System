@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome, {{ profile.user.username }}</h2>
+<p>Email: {{ profile.user.email }}</p>
+{% if profile.phone_number %}
+    <p>Phone: {{ profile.phone_number }}</p>
+{% else %}
+    <p>Phone: Not provided</p>
+{% endif %}
+
+{% if profile.address %}
+    <p>Address: {{ profile.address }}</p>
+{% else %}
+    <p>Address: Not provided</p>
+{% endif %}
+
+<h3>Your Bookings:</h3>
+<div class="table-responsive"> <!-- Wrap the table in a responsive div for better layout on smaller screens -->
+    <table class="table table-bordered" style="margin: 0 auto; max-width: 90%;"> <!-- Set max-width to fit the page -->
+        <thead>
+            <tr>
+                <th style="width: 15%; background-color: gray; color: white;">Doctor</th>
+                <th style="width: 25%; background-color: gray; color: white;">Doctor Name</th>
+                <th style="width: 25%; background-color: gray; color: white;">Specialization</th>
+                <th style="width: 25%; background-color: gray; color: white;">Booking Date</th>
+                <th style="width: 25%; background-color: gray; color: white;">Booking On</th>
+                <th style="width: 10%; background-color: gray; color: white;">Edit</th> <!-- New Edit column -->
+                <th style="width: 10%; background-color: gray; color: white;">Delete</th> <!-- New Delete column -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td class="text-center">
+                    <img src="{{ booking.doc_name.doc_image.url }}" alt="{{ booking.doc_name.doc_name }}" style="width: 100px; height: 100px; border-radius: 50%;">
+                </td>
+                <td>{{ booking.doc_name.doc_name }}</td>
+                <td>{{ booking.doc_name.doc_spec }}</td>
+                <td>{{ booking.booking_date }}</td>
+                <td>{{ booking.booked_on }}</td>
+                <td class="text-center">
+                    <!-- Edit button -->
+                    <a href="{% url 'edit_booking' booking.id %}" class="btn btn-warning btn-sm">Edit</a>
+                </td>
+                <td class="text-center">
+                    <!-- Delete button with confirmation -->
+                    <form action="{% url 'delete_booking' booking.id %}" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this booking?');">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7" class="text-center">No bookings found.</td> <!-- Adjusted colspan to match new columns -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="text-left" style="margin-left: 100px;"> <!-- Increased margin-left to move button right -->
+    <a href="{% url 'booking' %}" class="btn btn-primary" style="margin-top: 20px;">Book an Appointment</a> 
+</div>
+{% endblock %}
